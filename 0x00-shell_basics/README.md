@@ -8,3 +8,4 @@ File 6-firstdirectory Creat a new directory.
 File 7-movethatfile move betty from /tmp/ to /tmp/holberton.
 File 8-firstdelete Remove betty's file from /tmp/holberton.
 File 9-firstdirdeletion Delete the directory holberton that is in the /tmp directory.
+File 10-back Write a script that changes the working directory to the previous one.
