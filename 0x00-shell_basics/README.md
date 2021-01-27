@@ -6,3 +6,4 @@ File 4-listmorefiles List all files, even hidden files.
 File 5-listfilesdigitonly List the files in the working directory in long format.
 File 6-firstdirectory Creat a new directory.
 File 7-movethatfile move betty from /tmp/ to /tmp/holberton.
+File 8-firstdelete Remove betty's file from /tmp/holberton.
