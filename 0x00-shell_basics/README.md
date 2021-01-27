@@ -12,3 +12,4 @@ File 10-back Write a script that changes the working directory to the previous o
 File 11-lists Write a script that lists all files (even ones with names beginning with a period character, which are normally hidden) in the current directory and the parent of the working directory and the /boot directory (in this order), in long format.
 12-file_type Write a script that prints the type of the file named iamafile.
 File 13-symbolic_link Create a symbolic link to /bin/ls, named __ls__.
+File 14-copy_html copy files from current directory to parent directory avoid repeat files.
