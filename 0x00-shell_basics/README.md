@@ -14,3 +14,4 @@ File 11-lists Write a script that lists all files (even ones with names beginnin
 File 13-symbolic_link Create a symbolic link to /bin/ls, named __ls__.
 File 14-copy_html copy files from current directory to parent directory avoid repeat files.
 File 15-lets_move Create a script that moves all files beginning with an uppercase letter to the directory /tmp/u.
+File 16-clean_emacs Create a script that deletes all files in the current working directory that end with the character ~.
