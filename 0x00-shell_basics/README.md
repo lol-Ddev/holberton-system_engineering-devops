@@ -16,3 +16,4 @@ File 14-copy_html copy files from current directory to parent directory avoid re
 File 15-lets_move Create a script that moves all files beginning with an uppercase letter to the directory /tmp/u.
 File 16-clean_emacs Create a script that deletes all files in the current working directory that end with the character ~
 File 17-tree Create a script that creates the directories welcome/, welcome/to/ and welcome/to/holberton in the current directory.
+File 18-commas Write a command that lists all the files and directories of the current directory, separated by commas (,).
