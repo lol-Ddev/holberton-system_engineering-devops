@@ -9,3 +9,4 @@
 8. Write a script that sets the permission to the file hello (Non for owner, non for group, all for other users).
 9. Write a script that sets the mode of the file hello to this: -rwxr-x-wx.
 10. Write a script that sets the mode of the file hello the same as olleh’s mode.
+11. Create a script that adds execute permission to all subdirectories of the current directory for the owner, the group owner and all other users.
