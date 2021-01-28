@@ -7,3 +7,4 @@
 6. Write a script that adds execute permission to the owner and the group owner, and read permission to other users, to the file hello.
 7. Write a script that adds execution permission to the owner, the group owner and the other users, to the file hello.
 8. Write a script that sets the permission to the file hello (Non for owner, non for group, all for other users).
+9. Write a script that sets the mode of the file hello to this: -rwxr-x-wx.
