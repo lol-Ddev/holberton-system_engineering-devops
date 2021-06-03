@@ -1,16 +1,53 @@
-0. Create a script that changes your user ID to betty.
-1. Write a script that prints the effective userid of the current user.
-2. Write a script that prints all the groups the current user is part of.
-3. Write a script that changes the owner of the file hello to the user betty.
-4. Write a script that creates an empty file called hello.
-5. Write a script that adds execute permission to the owner of the file hello.
-6. Write a script that adds execute permission to the owner and the group owner, and read permission to other users, to the file hello.
-7. Write a script that adds execution permission to the owner, the group owner and the other users, to the file hello.
-8. Write a script that sets the permission to the file hello (Non for owner, non for group, all for other users).
-9. Write a script that sets the mode of the file hello to this: -rwxr-x-wx.
-10. Write a script that sets the mode of the file hello the same as olleh’s mode.
-11. Create a script that adds execute permission to all subdirectories of the current directory for the owner, the group owner and all other users.
-12. Create a script that creates a directory called dir_holberton with permissions 751 in the working directory.
-13. Write a script that changes the group owner to holberton for the file hello.14. Write a script that changes the owner to betty and the group owner to holberton for all the files and directories in the working directory.
-15. Write a script that changes the owner and the group owner of the file _hello to betty and holberton respectively.
-16. Write a script that changes the owner of the file hello to betty only if it is owned by the user guillaume.
+<h1 class="gap">0x01. Shell, permissions</h1><div class="gap" id="project-description">
+<h2>Resources</h2>
+<p><strong>Read or watch</strong>:</p>
+<ul>
+<li><a href="/rltoken/5uUsOHrMbVBOpZFteNyBLg" target="_blank" title="Permissions">Permissions</a> </li>
+</ul>
+<p><strong>man or help</strong>:</p>
+<ul>
+<li><code>chmod</code></li>
+<li><code>sudo</code></li>
+<li><code>su</code></li>
+<li><code>chown</code></li>
+<li><code>chgrp</code></li>
+<li><code>id</code></li>
+<li><code>groups</code></li>
+<li><code>whoami</code></li>
+<li><code>adduser</code></li>
+<li><code>useradd</code></li>
+<li><code>addgroup</code></li>
+</ul>
+<h2>Learning Objectives</h2>
+<p>At the end of this project, you are expected to be able to <a href="/rltoken/imb3Q5z7eHNQCpFduBbe5g" target="_blank" title="explain to anyone">explain to anyone</a>, <strong>without the help of Google</strong>:</p>
+<h3>Permissions</h3>
+<ul>
+<li>What do the commands <code>chmod</code>, <code>sudo</code>, <code>su</code>, <code>chown</code>, <code>chgrp</code> do</li>
+<li>Linux file permissions</li>
+<li>How to represent each of the three sets of permissions (owner, group, and other) as a single digit</li>
+<li>How to change permissions, owner and group of a file</li>
+<li>Why can’t a normal user <code>chown</code> a file</li>
+<li>How to run a command with root privileges</li>
+<li>How to change user ID or become superuser<br/></li>
+</ul>
+<h3>Other Man Pages</h3>
+<ul>
+<li>How to create a user</li>
+<li>How to create a group</li>
+<li>How to print real and effective user and group IDs</li>
+<li>How to print the groups a user is in</li>
+<li>How to print the effective userid</li>
+</ul>
+<h2>Requirements</h2>
+<h3>General</h3>
+<ul>
+<li>Allowed editors: <code>vi</code>, <code>vim</code>, <code>emacs</code></li>
+<li>All your scripts will be tested on Ubuntu 14.04 LTS</li>
+<li>All your scripts should be exactly two lines long (<code>$ wc -l file</code> should print 2)</li>
+<li>All your files should end with a new line (<a href="http://unix.stackexchange.com/questions/18743/whats-the-point-in-adding-a-new-line-to-the-end-of-a-file/18789">why?</a>)</li>
+<li>The first line of all your files should be exactly <code>#!/bin/bash</code></li>
+<li>A <code>README.md</code> file, at the root of the folder of the project, describing what each script is doing</li>
+<li>You are not allowed to use backticks, <code>&amp;&amp;</code>, <code>||</code> or <code>;</code></li>
+<li>All your files must be executable</li>
+</ul>
+</div>
