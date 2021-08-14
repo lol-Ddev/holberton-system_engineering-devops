@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-
 # a Bash script that uses ssh to connect to your
 # server using the private key ~/.ssh/holberton
 # with the user ubuntu.
 
 ssh ubuntu@34.139.136.20 -i ~/.ssh/holberton
+
