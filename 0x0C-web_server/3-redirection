@@ -9,6 +9,6 @@ sudo service nginx start
 sudo chmod o+w /var/www/html/index.nginx-debian.html
 echo "Holberton School" > /var/www/html/index.nginx-debian.html
 # rew="\\\trewrite ^/redirect_me$ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;"
-rew="location /redirect_me {\n\treturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n"
+rew="location /redirect_me/ {\n\treturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n"
 sed -i "48i $rew" /etc/nginx/sites-available/default
 sudo service nginx restart
