@@ -8,7 +8,7 @@ sudo apt-get -y install nginx
 sudo service nginx start
 sudo chmod o+w /var/www/html/index.nginx-debian.html
 echo "Holberton School" > /var/www/html/index.nginx-debian.html
-# rew="\\\trewrite ^/redirect_me$ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;"
-rew="location /redirect_me {\n\trewrite ^/redirect_me(.*)$ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanen permanent;\n"
-sed -i "48i $rew" /etc/nginx/sites-available/default
+sudo chmod 777 /etc/nginx/sites-available/
+rew="\\\trewrite ^/redirect_me https://www.google.com permanent;"
+sed -i "/server_name _;/ a $rew" /etc/nginx/sites-available/default
 sudo service nginx restart
