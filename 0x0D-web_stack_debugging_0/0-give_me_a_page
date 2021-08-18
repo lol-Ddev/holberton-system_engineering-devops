@@ -1,1 +1,1 @@
-sudo service apache start
+sudo service apache2 restart
