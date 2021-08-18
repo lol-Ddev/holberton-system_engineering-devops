@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# Configure your Nginx server so that
+# /redirect_me is redirecting to another page.
+
+# Update apt-get package manager
+sudo apt-get -y update
+# Upgrade apt-get package manager
+sudo apt-get -y upgrade
+# Install Nginx
+sudo apt-get -y install nginx
+# Start Nginx
+sudo service nginx start
+# Give permissions to html
+sudo chmod o+w /var/www/html/index.nginx-debian.html
+# Write 'Holberton School' into index.html file
+echo "Holberton School" > /var/www/html/index.nginx-debian.html
+# Give permisions to /etc/ngnix/sites-available folder
+sudo chmod 777 /etc/nginx/sites-available/
+# String to append
+rew="\\\trewrite ^/redirect_me https://www.google.com permanent;"
+# Append rew string into default file
+# Redirection config
+sed -i "/server_name _;/ a $rew" /etc/nginx/sites-available/default
+# Create a custom 404 page with a message
+echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/custom_404.html
+# Append 404 config string into /sites-enabled/default file
+sudo sed -i "20i \\\terror_page 404 /custom_404.html;\n\tlocation = /custom_404.html {\n\t\troot /usr/share/nginx/html;\n\t\tinternal;\n\t}" /etc/nginx/sites-enabled/default
+sudo service nginx restart
