@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # Configure web-server
+# shellcheck disable=SC2154
 
 # Update apt-get package manager
 sudo apt-get -y update
@@ -26,6 +27,6 @@ echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/custom_404.html
 sudo sed -i "20i \\\terror_page 404 /custom_404.html;\n\tlocation = /custom_404.html {\n\t\troot /usr/share/nginx/html;\n\t\tinternal;\n\t}" /etc/nginx/sites-enabled/default
 # Setting up HTTP response:
 # X-Served-By=$HOSTNAME
-sudo sed -i "11i \\\tadd_header X-served-By $HOSTNAME;" /etc/nginx/nginx.conf
+sudo sed -i "11i \\\tadd_header X-Served-By $HOSTNAME;" /etc/nginx/nginx.conf
 # Restart nginx
 sudo service nginx restart
