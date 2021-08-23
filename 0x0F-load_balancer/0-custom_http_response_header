@@ -14,7 +14,6 @@ sudo service nginx start
 sudo chmod o+w /var/www/html/index.nginx-debian.html
 # Write 'Holberton School' into index.html file
 echo "Holberton School" > /var/www/html/index.nginx-debian.html
-host=$(hostname)
-sudo sed -i "/http {/ a \\\tadd_header X-Served-By $host;" /etc/nginx/nginx.conf
+sudo sed -i "/http {/ a \\\tadd_header X-Served-By $HOSTNAME;" /etc/nginx/nginx.conf
 # Restart nginx
 sudo service nginx restart
