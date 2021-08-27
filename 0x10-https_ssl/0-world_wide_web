@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
-www="www"
-lb01="lb-01"
-web01="web-01"
-web02="web-02"
+#  script that will display information about subdomains.
 
-for subdomain in "www" lb01 web01 web02
-do
-	dig esneidergrvc.tech | awk '/ANSWER SECTION:/{getline; printf "The subdomain %s is a %s record and points to %s\n", subdomain, $4, $5}'
-done
+if [ "$#" -eq 1 ];
+then
+	dig www."$1" | grep -A1 'ANSWER SECTION:' | awk ' NR==2 {print "The subdomain is a " $4 " record and points to " $5}'
+	dig lb-01."$1" | grep -A1 'ANSWER SECTION:' | awk ' NR==2 {print "The subdomain is a " $4 " record and points to " $5}'
+	dig web-01."$1" | grep -A1 'ANSWER SECTION:' | awk ' NR==2 {print "The subdomain is a " $4 " record and points to " $5}'
+	dig web-02."$1" | grep -A1 'ANSWER SECTION:' | awk ' NR==2 {print "The subdomain is a " $4 " record and points to " $5}'
+else
+	dig "$2"."$1" | grep -A1 'ANSWER SECTION:' | awk ' NR==2 {print "The subdomain is a " $4 " record and points to " $5}'
+fi
