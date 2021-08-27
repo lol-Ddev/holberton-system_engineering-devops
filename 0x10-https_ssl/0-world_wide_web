@@ -1,1 +1,10 @@
-###
+#!/usr/bin/env bash
+www="www"
+lb01="lb-01"
+web01="web-01"
+web02="web-02"
+
+for subdomain in "www" lb01 web01 web02
+do
+	dig esneidergrvc.tech | awk '/ANSWER SECTION:/{getline; printf "The subdomain %s is a %s record and points to %s\n", subdomain, $4, $5}'
+done
