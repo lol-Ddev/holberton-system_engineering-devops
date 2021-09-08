@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# Create database
+echo "Enter the root password"
+mysql -uroot -p -e "CREATE DATABASE IF NOT EXISTS tyrell_corp;
+USE tyrell_corp;
+CREATE TABLE IF NOT EXISTS nexus6 (id INT, name VARCHAR(255));
+INSERT INTO nexus6(id, name) VALUES(1, 'Leon');"
+
+echo ""
+# Give permissions
+echo "Enter the root password"
+mysql -uroot -p -e "GRANT SELECT ON tyrell_corp.nexus6 TO 'holberton_user'@'localhost'"

@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+# Create new user replica_user
+mysql -uroot -p -e "CREATE USER 'replica_user'@'%' IDENTIFIED BY 'root';
+GRANT REPLICATION SLAVE ON *.* TO 'replica_user'@'%';
+GRANT SELECT ON mysql.user TO 'holberton_user'@'localhost'"
