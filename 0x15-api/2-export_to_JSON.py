@@ -4,9 +4,9 @@
     for a given employee ID, returns information
     about his/her TODO list progress.
 """
+import json
 import requests
 from sys import argv
-import json
 
 if __name__ == '__main__':
     user_id = argv[1]
