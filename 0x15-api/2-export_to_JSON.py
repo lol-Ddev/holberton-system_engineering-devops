@@ -6,6 +6,7 @@
 """
 import requests
 from sys import argv
+import json
 
 user_id = argv[1]
 api_url = 'https://jsonplaceholder.typicode.com'
@@ -21,10 +22,12 @@ with requests.Session() as s:
             if task['completed'] is True:
                 completed_tasks = completed_tasks + 1
 
-    print('Employee {} is done with tasks({}/{}):'.format(
-        employee['name'],
-        completed_tasks,
-        len(todo_list)))
-    for title in todo_list:
-        if title['completed'] is True:
-            print('\t {}'.format(title['title']))
+    json_file = {user_id: []}
+    for num, task in enumerate(todo_list):
+        json_file[user_id].append({
+            'task': todo_list[num].get('title'),
+            'completed': todo_list[num].get('completed'),
+            'username': employee.get('username')})
+
+    with open('{}.json'.format(user_id), 'w') as f:
+        json.dump(json_file, f)

@@ -4,6 +4,7 @@
     for a given employee ID, returns information
     about his/her TODO list progress.
 """
+import csv
 import requests
 from sys import argv
 
@@ -21,10 +22,8 @@ with requests.Session() as s:
             if task['completed'] is True:
                 completed_tasks = completed_tasks + 1
 
-    print('Employee {} is done with tasks({}/{}):'.format(
-        employee['name'],
-        completed_tasks,
-        len(todo_list)))
-    for title in todo_list:
-        if title['completed'] is True:
-            print('\t {}'.format(title['title']))
+    fieldnames = ['userId', 'name']
+    with open('{}.csv'.format(argv[1]), 'w') as csvfile:
+        writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
+        for task in todo_list:
+            writer.writerow([task['userId'], employee['name'], task['completed'], task['title']])
