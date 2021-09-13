@@ -23,9 +23,8 @@ if __name__ == '__main__':
                 if task['completed'] is True:
                     completed_tasks = completed_tasks + 1
 
-        fieldnames = ['userId', 'name']
         with open('{}.csv'.format(argv[1]), 'w') as csvfile:
             writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
             for task in todo_list:
-                writer.writerow([task['userId'], employee['name'],
+                writer.writerow([task['userId'], employee['username'],
                                 task['completed'], task['title']])
