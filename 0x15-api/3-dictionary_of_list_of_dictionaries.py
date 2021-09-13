@@ -8,10 +8,9 @@ import requests
 from sys import argv
 import json
 
-user_id = argv[1]
 api_url = 'https://jsonplaceholder.typicode.com'
 with requests.Session() as s:
-    employee = s.get('{}/users/{}'.format(api_url, user_id)).json()
+    employee = s.get('{}/users/'.format(api_url)).json()
     to_dos = s.get('{}/todos/'.format(api_url)).json()
 
     todo_list = []
@@ -22,12 +21,13 @@ with requests.Session() as s:
             if task['completed'] is True:
                 completed_tasks = completed_tasks + 1
 
-    json_file = {user_id: []}
-    for num, task in enumerate(todo_list):
-        json_file[user_id].append({
-            'task': todo_list[num].get('title'),
-            'completed': todo_list[num].get('completed'),
-            'username': employee.get('username')})
+    print(to_dos)
+    # json_file = {user_id: []}
+    # for num, task in enumerate(todo_list):
+        # json_file[user_id].append({
+            # 'task': todo_list[num].get('title'),
+            # 'completed': todo_list[num].get('completed'),
+            # 'username': employee.get('username')})
 
-    with open('{}.json'.format(user_id), 'w') as f:
-        json.dump(json_file, f)
+    # with open('{}.json'.format(user_id), 'w') as f:
+        # json.dump(json_file, f)
