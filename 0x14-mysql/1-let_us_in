@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# restart mysql
+sudo service mysql restart
+# Create new user and its password
+echo "Enter password for root user"
+mysql -hlocalhost -uroot -p -e "CREATE USER 'holberton_user'@'localhost' IDENTIFIED BY 'projectcorrection280hbtn'"
+# Give Replication permissions to 'holberton_user'
+echo "Enter password for root user"
+mysql -uroot -p -e "GRANT REPLICATION CLIENT ON *.* TO 'holberton_user'@'localhost'"
+# Show Permissions for holberton_user
+echo "Copy and paste this password: projectcorrection280hbtn"
+mysql -uholberton_user -p -e "SHOW GRANTS FOR 'holberton_user'@'localhost'"

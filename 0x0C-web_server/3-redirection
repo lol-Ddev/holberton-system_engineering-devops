@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Configure your Nginx server so that
+# /redirect_me is redirecting to another page.
+
+sudo apt-get -y update
+sudo apt-get -y upgrade
+sudo apt-get -y install nginx
+sudo service nginx start
+sudo chmod o+w /var/www/html/index.nginx-debian.html
+echo "Holberton School" > /var/www/html/index.nginx-debian.html
+sudo chmod 777 /etc/nginx/sites-available/
+rew="\\\trewrite ^/redirect_me https://www.google.com permanent;"
+sed -i "/server_name _;/ a $rew" /etc/nginx/sites-available/default
+sudo service nginx restart

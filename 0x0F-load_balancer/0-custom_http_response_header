@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Configure web-server
+# shellcheck disable=SC2154
+
+# Update apt-get package manager
+sudo apt-get -y update
+# Upgrade apt-get package manager
+sudo apt-get -y upgrade
+# Install Nginx
+sudo apt-get -y install nginx
+# Start Nginx
+sudo service nginx start
+# Give permissions to html
+sudo chmod o+w /var/www/html/index.nginx-debian.html
+# Write 'Holberton School' into index.html file
+echo "Holberton School" > /var/www/html/index.nginx-debian.html
+sudo sed -i "/http {/ a \\\tadd_header X-Served-By $HOSTNAME;" /etc/nginx/nginx.conf
+# Restart nginx
+sudo service nginx restart
